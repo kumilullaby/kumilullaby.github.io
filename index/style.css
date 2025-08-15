@@ -70,6 +70,13 @@ mark {
 /* Links: */
 a {
   text-decoration: underline;
+    -ms-webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -ms-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -ms-webkit-transition-property: transform;
+  transition-property: transform;
 }
 
 a,
@@ -81,6 +88,8 @@ a:hover,
 a:focus {
   color: var(--link-color-hover);
   text-decoration: none;
+  -ms-webkit-transform: translateX(8px);
+  transform: translateX(8px);
 }
 
 /* -------------------------------------------------------- */
