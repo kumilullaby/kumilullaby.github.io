@@ -229,6 +229,7 @@ footer {
   background: var(--content-background-color);
   display: flex;
   justify-content: center;
+  font-family: "Share Tech Mono", monospace;
 }
 
 footer a,
@@ -420,7 +421,7 @@ main h3,
 main h4,
 main h5,
 main h6 {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Share Tech Mono", monospace;
   margin-bottom: 0;
   line-height: 1.5;
 }
