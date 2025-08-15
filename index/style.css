@@ -601,3 +601,9 @@ img:hover {
     font-size: 1rem;
   }
 }
+
+.cedarville-cursive-regular {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
