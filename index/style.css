@@ -166,7 +166,7 @@ aside {
 }
 
 .sidebar-section:not(:last-child) {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .sidebar-section ul,
