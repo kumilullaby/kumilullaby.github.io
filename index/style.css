@@ -1,12 +1,5 @@
 /* FONT IMPORT */
-@font-face {
-  font-family: "Ananda";
-  src: url('https://www.dropbox.com/scl/fi/wj6iqwpv3q7h3jag86hsr/ananda.black.ttf?rlkey=pd1ttr3qsb2nmk2h1nawf0cz9&st=90wwycg2&dl=1');
-}
-
-@import {
-  src: url('https://www.dropbox.com/scl/fi/wj6iqwpv3q7h3jag86hsr/ananda.black.ttf?rlkey=pd1ttr3qsb2nmk2h1nawf0cz9&st=90wwycg2&dl=1');
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
   
 /* -------------------------------------------------------- */
 /* VARIABLES */
@@ -26,8 +19,8 @@
   --link-color-hover: #f1f1f1;
 
   /* Text: */
-  --font: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif, "Ananda";
-  --heading-font: "Ananda";
+  --font: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif;
+  --heading-font: "Roboto Mono", monospace;
   --font-size: 13px;
 
   /* Other Settings: */
@@ -127,7 +120,7 @@ header {
 }
 
 .header-title {
-  font-family: "Ananda", sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -162,7 +155,7 @@ aside {
 .sidebar-title {
   font-weight: bold;
   font-size: 1.2em;
-  font-family: var(--heading-font);
+  font-family: "Roboto Mono", monospace;
 }
 
 .sidebar-section:not(:last-child) {
@@ -416,7 +409,7 @@ main h3,
 main h4,
 main h5,
 main h6 {
-  font-family: var(--heading-font);
+  font-family: "Roboto Mono", monospace;
   margin-bottom: 0;
   line-height: 1.5;
 }
@@ -600,10 +593,4 @@ img:hover {
   #skip-to-content-link {
     font-size: 1rem;
   }
-}
-
-.cedarville-cursive-regular {
-  font-family: "Cedarville Cursive", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
