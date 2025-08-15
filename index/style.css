@@ -131,7 +131,7 @@ header {
 }
 
 .header-title {
-  font-family: "Caveat", cursive;
+  font-family: "Share Tech Mono", monospace;
   font-size: 3em;
   font-weight: bold;
 }
@@ -166,7 +166,7 @@ aside {
 .sidebar-title {
   font-weight: bold;
   font-size: 1.7em;
-  font-family: "Caveat", cursive;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .sidebar-section:not(:last-child) {
