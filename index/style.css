@@ -130,7 +130,7 @@ header {
 
 .header-title {
   font-family: "Roboto Mono", monospace;
-  font-size: 1.5em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -163,7 +163,7 @@ aside {
 
 .sidebar-title {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.7em;
   font-family: "Caveat", cursive;
 }
 
