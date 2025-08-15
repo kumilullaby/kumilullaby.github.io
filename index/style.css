@@ -1,6 +1,6 @@
 /* FONT IMPORT */
 @font-face {
-  font-family: ananda, sans-serif;
+  font-family: 'Ananda', sans-serif;
   src: url(https://www.dropbox.com/scl/fi/wj6iqwpv3q7h3jag86hsr/ananda.black.ttf?rlkey=pd1ttr3qsb2nmk2h1nawf0cz9&st=90wwycg2&dl=1);
 }
 
@@ -25,7 +25,7 @@
   --link-color-hover: #f1f1f1;
 
   /* Text: */
-  --font: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif;
+  --font: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif, ananda;
   --heading-font: 'Ananda', sans-serif;
   --font-size: 13px;
 
