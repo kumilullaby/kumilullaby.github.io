@@ -1,12 +1,14 @@
 /* FONT IMPORT */
+
+/* ROBOTO */
 @import url('font/Roboto_Mono.woff2');
-
-@import url('font/Cedarville_Cursive.woff2');
-
+/* CEDARVILLE */
+@import url('https://files.catbox.moe/tcbg0i.ttf');
+/* POIRET ONE */
 @import url('font/Poiret_One.woff2');
-
+/* FREDERICKA */
 @import url('font/Fredericka the Great.woff2');
-
+/* RAMPART ONE */
 @import url('font/Rampart_One.woff2');
   
 /* -------------------------------------------------------- */
