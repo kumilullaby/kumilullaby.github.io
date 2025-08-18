@@ -10,6 +10,31 @@
 @import url('font/Fredericka the Great.woff2');
 /* RAMPART ONE */
 @import url('font/Rampart_One.woff2');
+
+@font-face { 
+  font-family: "Rampart One", sans-serif;
+  src: url("./font/Rampart_One.woff2"); 
+} 
+
+@font-face { 
+  font-family: "Fredericka the Great", serif;
+  src: url("./font/Fredericka the Great.woff2"); 
+} 
+
+@font-face { 
+  font-family: "Poiret One", sans-serif;
+  src: url("./font/Poiret_One.woff2"); 
+} 
+
+@font-face { 
+  font-family: "Roboto Mono", monospace;
+  src: url("./font/Roboto_Mono.woff2"); 
+}
+
+@font-face { 
+  font-family: "Cedarville Cursive", cursive;
+  src: url("./font/Cedarville_Cursive.woff2"); 
+} 
   
 /* -------------------------------------------------------- */
 /* VARIABLES */
