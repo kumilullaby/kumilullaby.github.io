@@ -174,7 +174,7 @@ aside {
 .sidebar-title {
   font-weight: bold;
   font-size: 1.7em;
-  font-family: "Share Tech Mono", monospace;
+  font-family: "Bitcount Grid Double", system-ui;
 }
 
 .sidebar-section:not(:last-child) {
