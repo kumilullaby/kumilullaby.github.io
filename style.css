@@ -1,40 +1,15 @@
 /* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* ROBOTO */
-@import url('https://www.dropbox.com/scl/fi/osshn2mf9rxe4jwlx2g1e/Roboto_Mono.ttf?rlkey=vdmb1vq940ch64zy171fa5a8x&st=aon7rjks&dl=1');
-/* CEDARVILLE */
-@import url('https://www.dropbox.com/scl/fi/zs2ogwgzvjdpmuoovzrmk/Cedarville_Cursive.ttf?rlkey=hpxcm94ufbziq5modv4rnevjn&st=djnt574d&dl=1');
-/* POIRET ONE */
-@import url('https://www.dropbox.com/scl/fi/zn8pzy9awzx0f1xv9728z/Poiret_One.ttf?rlkey=qck6ayzht73yd47ubrmeo0mgr&st=1k3j5dhf&dl=1');
-/* FREDERICKA */
-@import url('https://www.dropbox.com/scl/fi/vluqiy28vtknsv317b743/Fredericka-the-Great.ttf?rlkey=ml6fjiy5w10w3r82ty3klqvcl&st=fw93l68j&dl=1');
-/* RAMPART ONE */
-@import url('https://www.dropbox.com/scl/fi/zs2ogwgzvjdpmuoovzrmk/Cedarville_Cursive.ttf?rlkey=hpxcm94ufbziq5modv4rnevjn&st=u9emobzo&dl=1');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Share+Tech+Mono&display=swap');
 
-@font-face { 
-  font-family: "Rampart One", sans-serif;
-  src: url("https://www.dropbox.com/scl/fi/dw674bme6c72tmkn4hhvx/Rampart_One.ttf?rlkey=7z8oa4e50gri0ausl3bcvyspd&st=a6x1jrrn&dl=1"); 
-} 
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poiret+One&display=swap');
 
-@font-face { 
-  font-family: "Fredericka the Great", serif;
-  src: url("https://www.dropbox.com/scl/fi/vluqiy28vtknsv317b743/Fredericka-the-Great.ttf?rlkey=ml6fjiy5w10w3r82ty3klqvcl&st=fw93l68j&dl=1"); 
-} 
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Poiret+One&display=swap');
 
-@font-face { 
-  font-family: "Poiret One", sans-serif;
-  src: url("https://www.dropbox.com/scl/fi/zn8pzy9awzx0f1xv9728z/Poiret_One.ttf?rlkey=qck6ayzht73yd47ubrmeo0mgr&st=1k3j5dhf&dl=1"); 
-} 
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
-@font-face { 
-  font-family: "Roboto Mono", monospace;
-  src: url("https://www.dropbox.com/scl/fi/osshn2mf9rxe4jwlx2g1e/Roboto_Mono.ttf?rlkey=vdmb1vq940ch64zy171fa5a8x&st=aon7rjks&dl=1"); 
-}
-
-@font-face { 
-  font-family: "Cedarville Cursive", cursive;
-  src: url("https://www.dropbox.com/scl/fi/zs2ogwgzvjdpmuoovzrmk/Cedarville_Cursive.ttf?rlkey=hpxcm94ufbziq5modv4rnevjn&st=djnt574d&dl=1"); 
-} 
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
   
 /* -------------------------------------------------------- */
 /* VARIABLES */
