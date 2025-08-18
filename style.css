@@ -1,15 +1,15 @@
 /* FONT IMPORT */
 
 /* ROBOTO */
-@import url('font/Roboto_Mono.woff2');
+@import url('./font/Roboto_Mono.woff2');
 /* CEDARVILLE */
-@import url('font/Cedarville_Cursive.woff2');
+@import url('./font/Cedarville_Cursive.woff2');
 /* POIRET ONE */
-@import url('font/Poiret_One.woff2');
+@import url('./font/Poiret_One.woff2');
 /* FREDERICKA */
-@import url('font/Fredericka the Great.woff2');
+@import url('./font/Fredericka the Great.woff2');
 /* RAMPART ONE */
-@import url('font/Rampart_One.woff2');
+@import url('./font/Rampart_One.woff2');
 
 @font-face { 
   font-family: "Rampart One", sans-serif;
