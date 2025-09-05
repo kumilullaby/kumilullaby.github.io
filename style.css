@@ -23,7 +23,7 @@
   --link-color-hover: #f1f1f1;
 
   /* Text: */
-  --font: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'ＭＳ ゴシック' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif, "Share Tech Mono";
+  --font: 'ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, 'ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯', 'MS PGothic', 'ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯' , 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif, "Share Tech Mono";
   --heading-font: "Share Tech Mono";
   --font-size: 13px;
 
@@ -111,10 +111,13 @@ a:focus {
 main {
   grid-area: main;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #484848 #0d0d0df2;
   padding: var(--padding);
   background: var(--content-background-color);
   border: var(--border);
   border-radius: var(--round-borders);
+  max-height: 600px;
 }
 
 /* -------------------------------------------------------- */
@@ -152,10 +155,14 @@ aside {
   grid-area: aside;
   border: var(--border);
   border-radius: var(--round-borders);
-  overflow: hidden;
+  overflow-y: auto;
   background: var(--sidebar-background-color);
   padding: var(--padding);
   color: var(--sidebar-text-color);
+  max-height: 600px;
+  scrollbar-width: thin;
+  scrollbar-color: #484848 #0d0d0df2;
+  
 }
 
 .left-sidebar {
@@ -168,7 +175,7 @@ aside {
 
 .sidebar-title {
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.4em;
   font-family: "Orbitron", sans-serif;
 }
 
@@ -319,7 +326,7 @@ header nav ul li:last-child > a {
 /* Subnavigation (Drop-Down): */
 
 header nav ul ul {
-  background: var(--content-background-color);
+  background: #121212eb;
   display: none;
   position: absolute;
   top: 100%;
@@ -353,7 +360,7 @@ header nav ul ul li a {
 /* -------------------------------------------------------- */
 
 main {
-  line-height: 1.5;
+  line-height: 1.;
 }
 
 main a,
@@ -392,7 +399,7 @@ main ol {
 
 main blockquote {
   background: rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 40px;
   margin: 1em 0;
   border-radius: 10px;
   border: 1px;
@@ -438,6 +445,7 @@ main h4:first-child,
 main h5:first-child,
 main h6:first-child {
   margin-top: 0;
+  
 }
 
 main h1 {
@@ -565,6 +573,9 @@ main h6 {
     border-bottom: 1px solid;
     padding: 9px;
     font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   
@@ -614,4 +625,8 @@ img:hover {
 
 ul {
   list-style: square;
+}
+
+hr {
+height: 1px;
 }
