@@ -677,9 +677,9 @@ height: 1px;
   border-color: #000;
 }
 
-#gal2021, #gal2022, #gal2023, #gal2024, #gal2025, #gal2026 {
+#gal2024, #gal2025, #gal2026 {
    display: none;
-   height: 0px;
+   height: auto;
    text-align: left;
    animation: fadeEffect 1s;
 }
