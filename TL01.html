@@ -19,32 +19,10 @@
     <link href="./style.css" rel="stylesheet" />
     
 <style>
-			.content
-			{
-				text-align: center;
-				max-width: 100%;
-			}
-			
-			a[href] { color: var(--link-visited); }
-			a:hover { color: white; }
-			
-			.header
-			{
-				display: flex;
-				column-gap: 50px;
-				row-gap: 20px;
-				justify-content: center;
-			}
 			
 main {
   max-height: 600px;
 }
-			
-			.header div
-			{
-				vertical-align: top;
-				text-align: center;
-			}
 			
 			.songlist
 			{
@@ -52,8 +30,6 @@ main {
 				margin-right: auto;
 				border-spacing: 0px 0px;
 			}
-			
-			.artisttable:not(:last-child) { margin-bottom: 19px; }
 			
 			.songlist tr { text-align: center; }
 			.songlist td:first-child, .songlist td:nth-child(2), .songlist td:nth-child(3)
@@ -82,9 +58,7 @@ main {
 			}
 			@-webkit-keyframes fadein { from {opacity: 0} to {opacity: 1} }
 			@keyframes fadein { from {opacity: 0} to {opacity: 1} }
-			
-			hr { width: 100%; }
-			
+						
 			.songsection { text-align: left; } /* Container for the whole bottom part of the page */
 			
 			.songwrapper /* Flex container for all three languages' lyrics divs */
@@ -116,43 +90,6 @@ main {
 			
 			p.subtitle { margin-top: -19px; }
 			
-			.singheader, .singheaderblank /* Header to indicate singable/regular lyrics, or blank spacer to line up other languages */
-			{
-				height: 14px;
-				margin-top: -14px;
-				margin-bottom: -14px;
-				font-size: 12px;
-				color: rgb(149, 149, 170);
-			}
-			
-			.notes /* Notes within lyrics that match width of lyrics content */
-			{
-				font-size: 12px;
-				line-height: 16px;
-				margin-top: 19px;
-				max-width: 30em; /* If unable to use JavaScript to set width, limit width to a fixed value instead */
-			}
-			
-			/* Styles for text and more in lyrics */
-			
-			.translucent { opacity: .5; }
-			
-			.nologic
-			{
-				color: rgb(237, 255, 251);
-				text-shadow: 0px 0px 3px rgb(237, 255, 251);
-			}
-			
-			.electronicspink { color: rgb(238, 119, 221); }
-			.electronicsblue { color: rgb(119, 187, 238); }
-			.qualiared { color: rgb(255, 0, 0); }
-			.rakshasared { color: rgb(205, 0, 85); }
-			.kogasa .b { color: rgb(0, 170, 170); }
-			.kogasa .r { color: rgb(170, 0, 0); }
-			.onestepmiku { color: rgb(64, 176, 64); }
-			.onestepluka { color: rgb(176, 80, 80); }
-			.hocusgirl { color: rgb(175, 207, 200); }
-			.hocuslady { color: rgb(213, 234, 191); }
 			
 			button.hiddenlink { color: rgba(57, 57, 101, 0) !important; } /* Color preferred over opacity so that it's revealed by highlighting */
 			button.hiddenlink:hover { color: white !important; }
