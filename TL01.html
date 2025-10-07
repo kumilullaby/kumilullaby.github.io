@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Site title  -->
+    <title>Sanctuary</title>
+
+    <!-- Site Description -->
+    <meta content="Sanctuary" name="for my thoughts." />
+
+    <!-- Setting character encoding and viewport size. Do not remove. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon -->
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- CSS: -->
+    <link href="./style.css" rel="stylesheet" />
+    
+<style>
+			.content
+			{
+				text-align: center;
+				max-width: 100%;
+			}
+			
+			a[href] { color: var(--link-visited); }
+			a:hover { color: white; }
+			
+			.header
+			{
+				display: flex;
+				column-gap: 50px;
+				row-gap: 20px;
+				justify-content: center;
+			}
+			
+main {
+  max-height: 600px;
+}
+			
+			.header div
+			{
+				vertical-align: top;
+				text-align: center;
+			}
+			
+			.songlist
+			{
+				margin-left: auto;
+				margin-right: auto;
+				border-spacing: 0px 0px;
+			}
+			
+			.artisttable:not(:last-child) { margin-bottom: 19px; }
+			
+			.songlist tr { text-align: center; }
+			.songlist td:first-child, .songlist td:nth-child(2), .songlist td:nth-child(3)
+			{
+				padding: 2px;
+				/*min-width: 150px;
+				max-width: 260px;*/
+				width: 260px;
+			}
+			.songlist td:last-child { width: 160px; }
+			
+			.songlist td:first-child { padding-left: 16px; border-radius: 8px 0px 0px 8px; }
+			.songlist td:not(:first-child) { padding-left: 8px; }
+			.songlist td:not(:last-child) { padding-right: 8px; }
+			.songlist td:last-child { padding-right: 16px; border-radius: 0px 8px 8px 0px; }
+			
+			.songlist:not(.artisttable) tr:nth-child(odd) td { background-color: rgba(0, 0, 0, .075); }
+			.songlist.artisttable tr:nth-child(even) td { background-color: rgba(0, 0, 0, .075); }
+			.currentsong td { background-color: rgba(255, 255, 255, .05) !important; }
+			
+			.revealed
+			{
+				display: table-row;
+				-webkit-animation: fadein 1s;
+				animation: fadein 1s;
+			}
+			@-webkit-keyframes fadein { from {opacity: 0} to {opacity: 1} }
+			@keyframes fadein { from {opacity: 0} to {opacity: 1} }
+			
+			hr { width: 100%; }
+			
+			.songsection { text-align: left; } /* Container for the whole bottom part of the page */
+			
+			.songwrapper /* Flex container for all three languages' lyrics divs */
+			{
+				display: flex;
+				flex-direction: row;
+				column-gap: 20px;
+				row-gap: 50px;
+				align-items: baseline;
+				max-width: 100%;
+				width: fit-content;
+				margin: auto;
+			}
+			
+			.songcontent /* Individual language details tag */
+			{
+				margin: 0px;
+				flex-basis: fit-content;
+			}
+			
+			.sectiontoggle /* Summary link to toggle display of specific language's lyrics */
+			{
+				font-size: 12px;
+				line-height: 16px;
+				margin-bottom: 4px;
+			}
+			details[open] > .sectiontoggle > .languageshow { display: none; } /* Hide "show" when showing */
+			details:not([open]) > .sectiontoggle > .languagehide { display: none; } /* Hide "hide" when not showing */
+			
+			p.subtitle { margin-top: -19px; }
+			
+			.singheader, .singheaderblank /* Header to indicate singable/regular lyrics, or blank spacer to line up other languages */
+			{
+				height: 14px;
+				margin-top: -14px;
+				margin-bottom: -14px;
+				font-size: 12px;
+				color: rgb(149, 149, 170);
+			}
+			
+			.notes /* Notes within lyrics that match width of lyrics content */
+			{
+				font-size: 12px;
+				line-height: 16px;
+				margin-top: 19px;
+				max-width: 30em; /* If unable to use JavaScript to set width, limit width to a fixed value instead */
+			}
+			
+			/* Styles for text and more in lyrics */
+			
+			.translucent { opacity: .5; }
+			
+			.nologic
+			{
+				color: rgb(237, 255, 251);
+				text-shadow: 0px 0px 3px rgb(237, 255, 251);
+			}
+			
+			.electronicspink { color: rgb(238, 119, 221); }
+			.electronicsblue { color: rgb(119, 187, 238); }
+			.qualiared { color: rgb(255, 0, 0); }
+			.rakshasared { color: rgb(205, 0, 85); }
+			.kogasa .b { color: rgb(0, 170, 170); }
+			.kogasa .r { color: rgb(170, 0, 0); }
+			.onestepmiku { color: rgb(64, 176, 64); }
+			.onestepluka { color: rgb(176, 80, 80); }
+			.hocusgirl { color: rgb(175, 207, 200); }
+			.hocuslady { color: rgb(213, 234, 191); }
+			
+			button.hiddenlink { color: rgba(57, 57, 101, 0) !important; } /* Color preferred over opacity so that it's revealed by highlighting */
+			button.hiddenlink:hover { color: white !important; }
+			
+			.invisible /* Used by 1imb0 solely for spacing purposes, so make as invisible as possible */
+			{
+				opacity: 0;
+				cursor: default;
+			}
+			
+			.songsection table { border-spacing: 0; }
+			.songsection td { padding: 0px; }
+			
+			.indent { padding-left: 16px; } /* Used for 1imb0 Romanji/English */
+			.limbotable { text-align: center; }
+			
+			img.emoji /* Used for Ever Lasting Night special symbols */
+			{
+				height: 14px;
+				position: relative;
+				top: 2px;
+			}
+			
+			@media (max-width: 850px)
+			{
+				.header, .songwrapper
+				{
+					width: 100%;
+					flex-direction: column; /* Force vertical display of the three lyrics languages */
+				}
+				.singheaderblank { display: none; } /* Forcing vertical display, so no need to show blank headers for alignment */
+				
+				.songlist { width: 100%; }
+				.songlist tr:not(#showallbutton) td:first-child, .songlist td:nth-child(2) { display: none; } /* Hide Japanese and Romanji columns in song list to save space */
+				.songlist td:nth-child(3) { min-width: auto; } /* No minimum on English column width in case of very small width */
+				.songlist td:last-child { width: 30%; } /* Relative link column width */
+			}
+		</style>
+		<script src="./analytics.js"></script>
+		<script>
+			function setNotesWidth()
+			{
+				var notes = document.getElementsByClassName("notes");
+				for (var i = 0; i < notes.length; i++)
+				{
+					notes[i].style.position = "absolute";
+					notes[i].style.maxWidth = "none";
+					notes[i].style.width = notes[i].parentElement.clientWidth + "px";
+					notes[i].style.position = "relative";
+				}
+			}
+			
+			function jumpDown()
+			{
+				document.getElementById("lyricsE").scrollIntoView();
+			}
+			
+			function resetForm()
+			{
+				document.postform.wo.value = 0;
+				document.postform.he.value = 0;
+				document.postform.jya.value = 0;
+				document.postform.albhed.value = 0;
+				document.postform.sort.value = 0;
+				document.postform.displayhorz.value = 1;
+				document.postform.currentSongNickname.value = "kenshijunk";
+				document.postform.justClickedSong.value = 0;
+				document.postform.clickedWhichLang.value = 2;
+			}
+			
+			function changeWo(value)
+			{
+				resetForm();
+				document.postform.wo.value = value;
+				document.postform.submit();
+			}
+			
+			function changeHe(value)
+			{
+				resetForm();
+				document.postform.he.value = value;
+				document.postform.submit();
+			}
+			
+			function changeJya(value)
+			{
+				resetForm();
+				document.postform.jya.value = value;
+				document.postform.submit();
+			}
+			
+			function changeAlBhed(value)
+			{
+				resetForm();
+				document.postform.albhed.value = value;
+				document.postform.submit();
+			}
+			
+			function changeSort(value)
+			{
+				resetForm();
+				document.postform.sort.value = value;
+				if (value == 3) // Singable Only
+					document.postform.currentSongNickname.value = "";
+				document.postform.submit();
+			}
+			
+			function changeDisplay(value)
+			{
+				resetForm();
+				document.postform.displayhorz.value = value;
+				document.postform.submit();
+			}
+			
+			function openSong(event, song, lang)
+			{
+				resetForm();
+				document.postform.currentSongNickname.value = song;
+				document.postform.clickedWhichLang.value = lang;
+				document.postform.justClickedSong.value = 1;
+				document.postform.submit();
+				event.preventDefault();
+				return false;
+			}
+			
+			function showAllSongRows()
+			{
+				resetForm();
+				document.postform.listShowAll.value = 1;
+				
+				var hiddenRows = document.getElementsByClassName("oldersong");
+				for (var i = hiddenRows.length - 1; i >= 0; i--) // Element list is "live" and actually altered by removal of class, so safer to do in reverse
+				{
+					hiddenRows[i].classList.add("revealed");
+					hiddenRows[i].classList.remove("toggle");
+					hiddenRows[i].classList.remove("oldersong");
+				}
+				
+				var showAllButton = document.getElementById("showallbutton");
+				if (showAllButton !== null)
+					showAllButton.classList.add("toggle");
+			}
+			
+			function toggle(sect)
+			{
+				var sectionElement = document.getElementById(sect);
+				if (!sectionElement.classList.contains("toggle"))
+					sectionElement.classList.add("toggle");
+				else
+					sectionElement.classList.remove("toggle");
+				setNotesWidth();
+			}
+			
+			function alternate(section)
+			{
+				window.getSelection().removeAllRanges(); // Deselect any selected text
+				
+				var sectionN = document.getElementById(section + "N");
+				var sectionO = document.getElementById(section + "O");
+				if (!sectionN.classList.contains("toggle"))
+				{
+					sectionN.classList.add("toggle");
+					sectionO.classList.remove("toggle");
+				}
+				else
+				{
+					sectionO.classList.add("toggle");
+					sectionN.classList.remove("toggle");
+				}
+				setNotesWidth();
+			}
+		</script>
+	</head>
+	
+  <body>
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+
+    <div class="layout">
+  
+      <!-- =============================================== -->
+      <!-- HEADER -->
+      <!-- =============================================== -->
+
+      <header>
+
+        <div class="header-content">
+	        <div class="header-title">Sanctuary</div>
+	        
+	        <!-- NAVIGATION -->
+	        <nav>
+	          <ul>
+	            <li><a href="/">■ Home</a></li>
+	            <li><a href="/about">■ About</a></li>
+	            <li><a href="/gallery">■ Gallery</a></li>
+			    <li><a href="/blog">■ Blog</a></li>
+	            <li><a href="/writing">■ Writing</a></li>
+	            <li><a href="/credits">■ Credits</a></li>
+
+	            <li>
+	                <strong>Submenu (hover)</strong>
+	                <ul>
+	                  <li><a href="/translations">■ Translations</a></li>
+	                  <li><a href="https://marshmallow-qa.com/6d379n294ez7eal" target="_blank">■ Ask Box</a></li>
+					          <li><a href="/404">Vocaloid 🛇</a></li>
+					          <li><a href="/philosophy">■ Philosophy</a></li>
+
+
+	                </ul>
+	            </li>
+	          </ul>
+	        </nav>
+        	
+        </div>
+      </header>
+
+	  
+        
+      <!-- =============================================== -->
+      <!-- LEFT SIDEBAR -->
+      <!-- =============================================== -->
+
+      <aside class="left-sidebar">
+	  
+        
+        <div class="sidebar-section">
+		  <img class="full-width-image">
+        </div>
+        
+        <div class="sidebar-section">
+         <p>This is a <i>translation</i> page, the translating point.</p>
+        </div>
+      </aside>
+	
+      
+  
+      <main id="content"> <!-- Do NOT remove the ID here -->
+
+        
+
+        <!-- =============================================== -->
+        <!-- MAIN CONTENT -->
+        <!-- =============================================== -->
+
+
+  <section>
+		<div class="songsection">
+						
+			<div class="songwrapper">
+				
+					
+					<div id="lyricsJ">
+						<h3><a href="https://www.youtube.com/watch?v=VxjL8Z07BnM" title="The original video on YouTube.">リイガルユース</a></h3>
+						
+						<p>燃え尽いたあなたに掛けるその手が<br>
+						「夢なんて無いの」のハンドサイン<br>
+						ガラスの靴割れた欠片に塗れて<br>
+						歩かされた跡をただ見ている</p>
+						
+						<p>息吐いたあなたを援うその手が<br>
+						「全て終わったの」のハンドサイン<br>
+						ただ悲しいばかりに拐かされては<br>
+						見えなかった二人を見たくなる</p>
+						
+						<p>永遠失うあなた一人<br>
+						その欠片一つで指が切れる<br>
+						素敵なものだけは失くさないで<br>
+						柔い塊を掻き抱いて</p>
+						
+						<p>息を呑むほどの酷い嗚咽が<br>
+						正常なあなたによく似合う<br>
+						間違いなどない　違う間もない<br>
+						余程の狡さを感じている</p>
+						
+						<p>正しく未熟なあなたの両腕が<br>
+						足りないあたしに縋っている<br>
+						後に退きなよ　望む前に<br>
+						照らされない世界に味を占める前に</p>
+						
+						<p>夢を見る前に</p>
+						
+						<p>底突いたあなた　背伸びしてはダメ<br>
+						底突いたあなた　背伸びしてはダメ<br>
+						後先が不味い　故に美味しい<br>
+						目が眩むからと許されない</p>
+						
+						<p>見て呉れ揃えて落ちる二人<br>
+						跡のないデコルテ　距離を詰める<br>
+						治らない傷の上書き如きに<br>
+						余計な何かまで持ち出して</p>
+						
+						<p>浅すぎる知恵も甘きな顔も<br>
+						そこにあるから触れたくなる<br>
+						導くでもない　従うでもない<br>
+						何かの代わりに愛している</p>
+						
+						<p>声にするほどの意味のないことを<br>
+						野暮なあなたに云わせている<br>
+						稚児は叱られ　猫は殺され<br>
+						熱のあなたはここに潰れてゆく</p>
+						
+						<p>行けよ空に　行けなくなる<br>
+						飛べよ空に　飛べなくなる<br>
+						離れたとて私には一生分だ<br>
+						きっと痛くなる</p>
+						
+						<p>正しく未熟な貴方の両腕<br>
+						ただ足りないあたしを縛っている<br>
+						恥じてくれるな　赤い眼<br>
+						含羞んでくれるな　幼い人</p>
+						
+						<p>息を呑むほどの酷い嗚咽が<br>
+						正常なあなたによく似合う<br>
+						間違いなどない　違う間もない<br>
+						余程の狡さに旗を上げる</p>
+						
+						<p>ああ</p>
+						
+						<p>染みては消える　身体そのもの<br>
+						今どこまでがあたしのもの？<br>
+						見え透いたあなたを裁くこの手が<br>
+						綺麗な何かとまだ間違えている</p>
+					</div>
+			
+				
+					
+					<div id="lyricsE">
+						<h3><a href="https://www.youtube.com/watch?v=VxjL8Z07BnM">Legal Youth</a></h3>
+						
+						<p>The hand that hangs over the burned-out you<br>
+						is a hand sign that reads, "I don't have any dreams."<br>
+						Looking at the tracks where I was made to walk,<br>
+						was covered in the shards of a glass shoe</p>
+						
+						<p>The hand that covered you as you exhaled<br>
+						is a hand sign that reads, "It's all over."<br>
+						You'll let yourself be stolen just 'cause you're sad<br>
+						that we, who wish to meet, cannot meet</p>
+						
+						<p>You are alone, lost forever<br>
+						All it takes is one of those shards to cut your finger<br>
+						So don't you lose the wonderful things,<br>
+						embrace these tender lumps in your arms</p>
+						
+						<p>Those awful sobs that leave you gasping for breath,<br>
+						suits you so well for your normalcy.<br>
+						There can be no mistake, nor is there time to change<br>
+						I was too deceptive for my own good</p>
+						
+						<p>Your two rightly inexperienced arms<br>
+						are clinging to me, who is not enough<br>
+						Back off, before you wish for it,<br>
+						before you get a taste of a world that won't be shining.</p>
+						
+						<p>Before you dream</p>
+						
+						<p>You've hit rock bottom, don't try to prove yourself<br>
+						It has to be me, it can't be me either<br>
+						The aftertaste is bad, thus it tastes good<br>
+						I can't accept it 'cause I'm afraid you'll be stolen away</p>
+						
+						<p>Look at us, the two who fall in unison<br>
+						Décolleté without a mark, we're closing the distance<br>
+						You even brought up something unnecessary,<br>
+						to overwrite scars that do not heal</p>
+						
+						<p>Neither too shallow wits nor too sweet a face<br>
+						it is right there and you want to feel it<br>
+						Neither to be your leader nor your follower<br>
+						I love you in lieu of something else</p>
+						
+						<p>I'm letting you say things<br>
+						that doesn't make any sense aloud<br>
+						Children are scolded, cats are killed<br>
+						This passion of yours will crumble here</p>
+						
+						<p>Going into the sky but unable to go<br>
+						Flying into the sky, but unable to fly<br>
+						It'll feel like eternity, even if I withdraw<br>
+						it's going to keep hurting.</p>
+						
+						<p>Your two rightly inexperienced arms<br>
+						are binding me, who is not enough<br>
+						Don't be so ashamed, red eye<br>
+						Don't be so timid, little one</p>
+						
+						<p>Those awful sobs that leave you gasping for breath,<br>
+						suits you so well for your normalcy.<br>
+						There cannot be a mistake, nor is there time to change<br>
+						My sheer deception made you wave the white flag</p>
+						
+						<p>Ahh</p>
+						
+						<p>The body itself is stained and vanishes<br>
+						To what extent do I own you now?<br>
+						This hand which judges you so obviously,<br>
+						I still mistake it as something wonderful</p>
+					</div>
+				
+			</div>
+			
+			<hr>
+			
+		<footer>余程の狡さに旗を上げる: ＊ (The other party) was so devious that (I) gave up. I believe the flag is a white flag (= surrender)</footer>	<br>
+		<footer>恥じてくれるな　赤い眼: ＊ I believe the red eye is referring to bloodshot eyes, though the 眼 is pronounced as まなこ and not as め in the song.</footer>	
+
+			
+			</div>
+		
+            
+
+        </section>
+      </main>
+
+
+      <!-- =============================================== -->
+      <!-- FOOTER -->
+      <!-- =============================================== -->
+
+      <footer>
+            <div><a href="/index">sanctuary.</a></div>
+      </footer>
+  
+    <!-- Closing .layout: -->
+    </div>
+
+
+  </body>
+</html>
