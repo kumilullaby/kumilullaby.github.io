@@ -433,9 +433,9 @@ main center {
 }
 
 main hr {
-  border: 0;
   border-top: var(--border);
   margin: 1.5em 0;
+  border: 1px dotted;
 }
 
 /* HEADINGS: */
