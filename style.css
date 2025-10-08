@@ -12,7 +12,7 @@
 /* Variables are used like this: var(--text-color) */
 :root {
   /* Background Colors: */
-  --background-color: #858585;
+  --background: #858585;
   --background: linear-gradient(90deg, rgba(133, 133, 133, 1) 0%, rgba(66, 66, 66, 1) 10%, rgba(43, 42, 42, 1) 18%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 98%, rgba(0, 0, 0, 1) 100%);
   --content-background-color: #4040405c;
   --sidebar-background-color: #4040405c;
