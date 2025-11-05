@@ -201,8 +201,6 @@ aside {
   margin: 1em 0;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px;
-  border-style: outset;
 }
 
 .sidebar-section blockquote > *:first-child {
@@ -415,8 +413,6 @@ main blockquote {
   padding: 40px;
   margin: 1em 0;
   border-radius: 10px;
-  border: 1px;
-  border-style: outset;
 }
 
 main pre {
