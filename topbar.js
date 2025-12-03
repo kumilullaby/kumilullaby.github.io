@@ -1,4 +1,4 @@
-var html = '<a href="index.html">Home</a>';
+var html = '<a href="index.html">Home</a> ';
 
 
 var section1 = ['HTML', 'Java', 'CSS']
