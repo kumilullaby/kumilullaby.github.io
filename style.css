@@ -720,3 +720,7 @@ border: 1px dotted;
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+a .WHATEVERMANIJUSTWANTANAVIGATIONBAR {
+  margin-right: 10px;
+}
