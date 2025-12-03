@@ -1,4 +1,4 @@
-var html = '<a href="index.html">■ Home</a> ';
+var html = '<a href="/">■ Home</a> ';
 
 html += '<a href="https://youtu.be/dQw4w9WgXcQ">Custom Link</a>'
 
