@@ -1,5 +1,6 @@
 var html = '<a href="index.html">Home</a>';
 
+
 var section1 = ['HTML', 'Java', 'CSS']
 for (i = 0; i<section1.length; i++){
 	html += '<a href="' + section1[i] + '.html" class="whatevermanijustwantnavigationbar">' + section1[i] + '</a>'
