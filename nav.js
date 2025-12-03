@@ -1,7 +1,6 @@
-//0 bluef00t "Templaterr"
-var html = '<div class="navlink"><a href="index.html">Home</a></div>';//you can change this text to be an image/site button if you want.
+var html = '<div class="navlink"><a href="index.html">Home</a></div>';
 
-var section1 = ['HTML', 'Java', 'CSS']//write one-word link names in this list
+var section1 = ['HTML', 'Java', 'CSS']
 for (i = 0; i<section1.length; i++){
 	html += '<div class="navlink"><a href="' + section1[i] + '.html">' + section1[i] + '</a></div>'
 }
