@@ -78,3 +78,5 @@ function createNavigationMenu() {
 
   return navElement;
 }
+
+document.getElementById("templaterr-topbar").innerHTML = html;
