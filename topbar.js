@@ -1,5 +1,3 @@
-<script language="JavaScript">
-<!--
 document.writeln("<nav>");
 document.writeln("          <ul>");
 document.writeln("            <li><a href=/"//">■ Home</a></li>");
@@ -18,5 +16,3 @@ document.writeln("	                </ul>");
 document.writeln("            </li>");
 document.writeln("          </ul>");
 document.writeln("        </nav>");
-//-->
-</script>
