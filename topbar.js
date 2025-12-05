@@ -5,7 +5,16 @@ html += '<a href="/gallery">■ Gallery</a> '
 html += '<a href="/blog">■ Blog</a> '
 html += '<a href="/translations">■ Translations</a> '
 html += '<a href="/credits">■ Credits</a> '
-html += '<li>
+html += '<nav>
+	          <ul>
+	            <li><a href="/">■ Home</a></li>
+	            <li><a href="/about">■ About</a></li>
+	            <li><a href="/gallery">■ Gallery</a></li>
+	            <li><a href="/blog">■ Blog</a></li>
+	            <li><a href="/translations">■ Translations</a></li>
+	            <li><a href="/credits">■ Credits</a></li>
+
+	            <li>
 	                <strong>Submenu (hover)</strong>
 	                <ul>
 	                  <li><a href="/writing">■ Writing</a></li>
